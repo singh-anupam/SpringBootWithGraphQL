@@ -1,0 +1,30 @@
+type Product
+{
+	 id : Int
+	 name : String
+	 category : String
+	 price : Float
+	 stock : Int
+}
+input ProductInput
+{
+	 id : Int
+	 name : String
+	 category : String
+	 price : Float
+	 stock : Int
+}
+
+
+type Query
+{
+getProducts : [Product]
+getProductsByCategory(category:String) : [Product]
+}
+
+type Mutation
+{
+updateStock(id:ID, quantity:Int) : Product
+addShipment(id:ID, quantity :Int) : Product
+addNewProduct(product : ProductInput) : Product
+}
